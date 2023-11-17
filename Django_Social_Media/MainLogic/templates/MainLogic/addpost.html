@@ -1,0 +1,18 @@
+{% extends 'MainLogic/layout.html'%}
+
+
+{% block title%}Add Post | Social Network{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <form class="post-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.title}}<br>
+        <label for="">Встановити зображення</label>
+        {{form.image}}
+        {{form.full_text}}
+        <span class="error">{{error}}</span>
+        <button type="submit" class="form-submit-button">Відправити</button>
+    </form>
+  </div>
+{% endblock %}

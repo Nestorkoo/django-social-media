@@ -1,0 +1,15 @@
+{% extends 'MainLogic/layout.html'%}
+
+
+{% block title%}{{title}}{% endblock %}
+
+{% block content %}
+    {% for p in posts %}
+    <div class="post-card">
+        <h2 class="post-title">{{ p.title }}</h2>
+        <img class="post-image" src="{{ p.image.url}}">
+        <p class="post-text">{{ p.full_text }}</p>
+      </div>
+
+    {% endfor %}
+{% endblock %}
